@@ -47,18 +47,49 @@
 
 // Question 4
 
-{
-    function isPrime(num) {
-        if (num <= 1) return false;
-        if (num <= 3) return true;
-        if (num % 2 === 0 || num % 3 === 0) return false;
-        for (let i = 5; i * i <= num; i += 6) {
-            if (num % i === 0 || num % (i + 2) === 0) return false;
-        }
+// {
+//     function isPrime(num) {
+//         if (num <= 1) return false;
+//         if (num <= 3) return true;
+//         if (num % 2 === 0 || num % 3 === 0) return false;
+//         for (let i = 5; i * i <= num; i += 6) {
+//             if (num % i === 0 || num % (i + 2) === 0) return false;
+//         }
     
-        return true;
+//         return true;
+//     }
+//     const numbers = [2, 3, 4, 5, 10, 13, 17, 18, 19, 23, 25];
+//     const primes = numbers.filter(isPrime);
+//     console.log(primes);
+// }
+
+// Question 5
+
+// {
+//     Map:
+//     Transform ,Data, Extract, Properties ,Format Data
+//     Filter:
+//     Filter by Condition, Remove Unwanted Elements ,Search for Items    
+//     Reduce:
+//     Sum Values ,Flatten Arrays ,Count Occurrences ,Combine Objects
+// }
+
+// Question 6
+
+{
+    async function fetchdata(){
+        const response=await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        try{
+        if(!response.ok){
+            throw new Error(`Http Error ${response.status}`);
+
+        }
+        const data=await response.json();
+        console.log(data);
     }
-    const numbers = [2, 3, 4, 5, 10, 13, 17, 18, 19, 23, 25];
-    const primes = numbers.filter(isPrime);
-    console.log(primes);
+    catch{
+        console.error('Error fetching data:', error);
+    }
+}
+fetchdata()
 }
