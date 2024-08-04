@@ -76,20 +76,41 @@
 
 // Question 6
 
-{
-    async function fetchdata(){
-        const response=await fetch('https://jsonplaceholder.typicode.com/posts/1');
-        try{
-        if(!response.ok){
-            throw new Error(`Http Error ${response.status}`);
+// {
+//     async function fetchdata(){
+//         const response=await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//         try{
+//         if(!response.ok){
+//             throw new Error(`Http Error ${response.status}`);
 
+//         }
+//         const data=await response.json();
+//         console.log(data);
+//     }
+//     catch{
+//         console.error('Error fetching data:', error);
+//     }
+// }
+// fetchdata()
+// }
+
+// Question 7
+
+{
+    const person = {
+        name: 'John Doe',
+        address: {
+            street: '123 Elm St',
+            city: 'Springfield',
+            zip: '12345'
+        },
+        contact: {
+            email: 'john.doe@example.com',
+            phone:"9682XXXXXX"
         }
-        const data=await response.json();
-        console.log(data);
-    }
-    catch{
-        console.error('Error fetching data:', error);
-    }
-}
-fetchdata()
+    };
+
+    const phoneNumber = person.contact?.phone;
+    
+    console.log(phoneNumber);
 }
