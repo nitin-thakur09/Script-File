@@ -11,18 +11,17 @@
 
 // Question 2
 
-// {
-//     let grade=stdscr(Number(prompt()));
-//     function stdscr(value){
-//         console.log(value);
-//     if(value>80&&value<=100){return "A"}
-//     else if(value>60&&value<=80){return "B"}
-//     else if(value>50&&value<=60){return "C"}
-//     else if(value>33&&value<=50){return "D"}
-//     else if(value>=0&&value<=33){return "F"}
-//     else{return "Invalide"}
-// }
-// }
+{
+    let grade=stdscr(Number(prompt()));
+    function stdscr(value){
+    return (value > 80 && value <= 100) ? "A" :
+    (value > 60 && value <= 80) ? "B" :
+    (value > 50 && value <= 60) ? "C" :
+    (value > 33 && value <= 50) ? "D" :
+    (value >= 0 && value <= 33) ? "F" :
+    "Invalid";
+}
+}
 
 // Question 3
 
